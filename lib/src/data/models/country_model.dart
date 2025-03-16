@@ -2,10 +2,10 @@
 //
 //     final countryModel = countryModelFromJson(jsonString);
 
+// ignore: depend_on_referenced_packages
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'dart:convert';
 
-import '../../domain/entities/country.dart';
 
 part 'country_model.freezed.dart';
 
@@ -20,10 +20,10 @@ String countryModelToJson(List<CountryModel> data) =>
 @freezed
 class CountryModel with _$CountryModel {
   const factory CountryModel({
-    @JsonKey(name: "name") required String name,
-    @JsonKey(name: "capital") required String capital,
+    required String name,
+    required String capital,
     required String code,
-    @JsonKey(name: "flag") required String flag,
+    required String flag,
   }) = _CountryModel;
 
   factory CountryModel.fromJson(Map<String, dynamic> json) =>
