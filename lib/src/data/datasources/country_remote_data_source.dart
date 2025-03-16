@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:countries/src/constants/categories/api_category.dart';
 import 'package:countries/src/constants/categories/string_category.dart';
 import 'package:dio/dio.dart';
 import '../../core/error/exceptions.dart';
@@ -16,8 +17,7 @@ class CountryRemoteDataSourceImpl implements CountryRemoteDataSource {
   @override
   Future<List<CountryModel>> getCountries() async {
     try {
-      final response = await dio.get(
-          'https://raw.githubusercontent.com/PouriaMoradi021/countries-api/refs/heads/main/countries.json');
+      final response = await dio.get(APICategory.countries);
 
       if (response.statusCode == 200) {
         final String responseData = response.data;
@@ -33,7 +33,8 @@ class CountryRemoteDataSourceImpl implements CountryRemoteDataSource {
         }).toList();
       } else {
         throw ServerException(
-            message: StringCategory.failedToLoadCountries(response.statusCode.toString()));
+            message: StringCategory.failedToLoadCountries(
+                response.statusCode.toString()));
       }
     } catch (e) {
       throw ServerException(
