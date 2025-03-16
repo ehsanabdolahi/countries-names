@@ -12,5 +12,5 @@ class Country extends Equatable {
   });
 
   @override
-  List<Object> get props => [name, capital, flagUrl];
+  List<String> get props => [name, capital, flagUrl];
 }
