@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:countries/src/constants/categories/string_category.dart';
 import 'package:flutter/material.dart';
 import '../../domain/entities/country.dart';
 
@@ -21,7 +22,8 @@ class CountryListItem extends StatelessWidget {
           height: 40,
           child: CachedNetworkImage(
             imageUrl: country.flagUrl,
-            placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+            placeholder: (context, url) =>
+                const Center(child: CircularProgressIndicator()),
             errorWidget: (context, url, error) => const Icon(Icons.error),
             fit: BoxFit.cover,
           ),
@@ -31,7 +33,9 @@ class CountryListItem extends StatelessWidget {
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         subtitle: Text(
-          country.capital.isEmpty ? 'پایتخت نامشخص' : 'پایتخت: ${country.capital}',
+          country.capital.isEmpty
+              ? StringCategory.emptyString
+              : StringCategory.capitalIndicator(country.capital),
           style: const TextStyle(fontStyle: FontStyle.italic),
         ),
       ),
