@@ -60,7 +60,8 @@ class _CountriesPageState extends State<CountriesPage> {
               ),
             );
           }
-          return const Center(child: Text(StringCategory.pleaseTapLoadingButton));
+          return const Center(
+              child: Text(StringCategory.pleaseTapLoadingButton));
         },
       ),
     );

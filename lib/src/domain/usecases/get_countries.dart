@@ -8,10 +8,6 @@ class GetCountries {
 
   GetCountries(this.repository);
 
-  Future<Either<Failure, List<Country>>> execute() {
-    return repository.getCountries();
-  }
-
   Future<Either<Failure, List<Country>>> call() {
     return repository.getCountries();
   }
