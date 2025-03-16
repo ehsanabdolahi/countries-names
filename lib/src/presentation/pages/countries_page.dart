@@ -6,7 +6,7 @@ import '../bloc/country/country_state.dart';
 import '../widgets/country_list_item.dart';
 
 class CountriesPage extends StatefulWidget {
-  const CountriesPage({Key? key}) : super(key: key);
+  const CountriesPage({super.key});
 
   @override
   State<CountriesPage> createState() => _CountriesPageState();
