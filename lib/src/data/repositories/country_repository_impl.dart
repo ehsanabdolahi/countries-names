@@ -1,3 +1,4 @@
+import 'package:countries/src/constants/categories/string_category.dart';
 import 'package:dartz/dartz.dart';
 import '../../core/error/exceptions.dart';
 import '../../core/error/failures.dart';
@@ -29,7 +30,7 @@ class CountryRepositoryImpl implements CountryRepository {
         return Left(ServerFailure(message: e.toString()));
       }
     } else {
-      return const Left(NetworkFailure(message: 'No internet connection'));
+      return const Left(NetworkFailure(message: StringCategory.noInternetConnection));
     }
   }
 }

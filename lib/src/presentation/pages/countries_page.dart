@@ -1,3 +1,4 @@
+import 'package:countries/src/constants/categories/string_category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/country/country_bloc.dart';
@@ -23,7 +24,7 @@ class _CountriesPageState extends State<CountriesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('کشورهای جهان'),
+        title: const Text(StringCategory.worldsCountries),
         centerTitle: true,
       ),
       body: BlocBuilder<CountryBloc, CountryState>(
@@ -44,7 +45,7 @@ class _CountriesPageState extends State<CountriesPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'خطا: ${state.message}',
+                    StringCategory.errorIndicator(state.message),
                     textAlign: TextAlign.center,
                     style: const TextStyle(color: Colors.red),
                   ),
@@ -53,13 +54,13 @@ class _CountriesPageState extends State<CountriesPage> {
                     onPressed: () {
                       context.read<CountryBloc>().add(GetCountriesEvent());
                     },
-                    child: const Text('تلاش مجدد'),
+                    child: const Text(StringCategory.tryAgain),
                   ),
                 ],
               ),
             );
           }
-          return const Center(child: Text('لطفاً برای دریافت لیست کشورها، روی دکمه بارگیری کلیک کنید.'));
+          return const Center(child: Text(StringCategory.pleaseTapLoadingButton));
         },
       ),
     );

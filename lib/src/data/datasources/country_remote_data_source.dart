@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:countries/src/constants/categories/string_category.dart';
 import 'package:dio/dio.dart';
 import '../../core/error/exceptions.dart';
 import '../models/country_model.dart';
@@ -32,11 +33,11 @@ class CountryRemoteDataSourceImpl implements CountryRemoteDataSource {
         }).toList();
       } else {
         throw ServerException(
-            message: 'Failed to load countries: ${response.statusCode}');
+            message: StringCategory.failedToLoadCountries(response.statusCode.toString()));
       }
     } catch (e) {
       throw ServerException(
-          message: 'Failed to load countries: ${e.toString()}');
+          message: StringCategory.failedToLoadCountries(e.toString()));
     }
   }
 }
