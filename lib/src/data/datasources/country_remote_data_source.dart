@@ -19,7 +19,9 @@ class CountryRemoteDataSourceImpl implements CountryRemoteDataSource {
           'https://raw.githubusercontent.com/PouriaMoradi021/countries-api/refs/heads/main/countries.json');
 
       if (response.statusCode == 200) {
-        final List<dynamic> countriesJson = response.data;
+        final String responseData = response.data;
+        final List<dynamic> countriesJson = json.decode(responseData);
+
         return countriesJson.map((json) {
           return CountryModel.fromJson({
             'name': json['name'] ?? '',
