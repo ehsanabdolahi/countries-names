@@ -27,7 +27,7 @@ void main() {
   ];
 
   test(
-    'should get list of countries from the repository',
+    'should get list of countries from repository',
         () async {
       // arrange
       when(mockCountryRepository.getCountries())
