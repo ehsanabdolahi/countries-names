@@ -11,14 +11,14 @@ class CountryBloc extends Bloc<CountryEvent, CountryState> {
   }
 
   Future<void> _onGetCountries(
-      GetCountriesEvent event,
-      Emitter<CountryState> emit,
-      ) async {
+    GetCountriesEvent event,
+    Emitter<CountryState> emit,
+  ) async {
     emit(CountryLoading());
     final result = await getCountries();
     result.fold(
-          (failure) => emit(CountryError(message: failure.message)),
-          (countries) => emit(CountryLoaded(countries: countries)),
+      (failure) => emit(CountryError(message: failure.message)),
+      (countries) => emit(CountryLoaded(countries: countries)),
     );
   }
 }

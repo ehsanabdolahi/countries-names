@@ -14,7 +14,7 @@ final sl = GetIt.instance;
 Future<void> init() async {
   // BLoC
   sl.registerFactory(
-        () => CountryBloc(getCountries: sl()),
+    () => CountryBloc(getCountries: sl()),
   );
 
   // Use cases
@@ -22,7 +22,7 @@ Future<void> init() async {
 
   // Repositories
   sl.registerLazySingleton<CountryRepository>(
-        () => CountryRepositoryImpl(
+    () => CountryRepositoryImpl(
       remoteDataSource: sl(),
       networkInfo: sl(),
     ),
@@ -30,7 +30,7 @@ Future<void> init() async {
 
   // Data sources
   sl.registerLazySingleton<CountryRemoteDataSource>(
-        () => CountryRemoteDataSourceImpl(dio: sl()),
+    () => CountryRemoteDataSourceImpl(dio: sl()),
   );
 
   // Core

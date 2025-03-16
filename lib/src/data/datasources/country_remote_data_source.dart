@@ -24,12 +24,7 @@ class CountryRemoteDataSourceImpl implements CountryRemoteDataSource {
         final List<dynamic> countriesJson = json.decode(responseData);
 
         return countriesJson.map((json) {
-          return CountryModel.fromJson({
-            'name': json['name'] ?? '',
-            'capital': json['capital'] ?? '',
-            'code': json['code'] ?? '',
-            'flag': json['flag'] ?? '',
-          });
+          return CountryModel.fromJson(json);
         }).toList();
       } else {
         throw ServerException(

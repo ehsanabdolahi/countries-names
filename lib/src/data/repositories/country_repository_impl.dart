@@ -22,7 +22,8 @@ class CountryRepositoryImpl implements CountryRepository {
     if (await networkInfo.isConnected) {
       try {
         final countryModels = await remoteDataSource.getCountries();
-        final countries = countryModels.map((model) => model.toEntity()).toList();
+        final countries =
+            countryModels.map((model) => model.toEntity()).toList();
         return Right(countries);
       } on ServerException catch (e) {
         return Left(ServerFailure(message: e.message));
@@ -30,7 +31,8 @@ class CountryRepositoryImpl implements CountryRepository {
         return Left(ServerFailure(message: e.toString()));
       }
     } else {
-      return const Left(NetworkFailure(message: StringCategory.noInternetConnection));
+      return const Left(
+          NetworkFailure(message: StringCategory.noInternetConnection));
     }
   }
 }
