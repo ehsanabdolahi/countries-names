@@ -3,11 +3,11 @@ import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import 'core/network/network_info.dart';
-import 'data/datasources/country_remote_data_source.dart';
-import 'data/repositories/country_repository_impl.dart';
-import 'domain/repositories/country_repository.dart';
-import 'domain/usecases/get_countries.dart';
-import 'presentation/bloc/country/country_bloc.dart';
+import 'features/countries/data/datasources/country_remote_data_source.dart';
+import 'features/countries/data/repositories/country_repository_impl.dart';
+import 'features/countries/domain/repositories/country_repository.dart';
+import 'features/countries/domain/usecases/get_countries.dart';
+import 'features/countries/presentation/bloc/country/country_bloc.dart';
 
 final sl = GetIt.instance;
 

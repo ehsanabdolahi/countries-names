@@ -6,9 +6,10 @@
 import 'dart:async' as _i3;
 
 import 'package:countries/src/core/network/network_info.dart' as _i5;
-import 'package:countries/src/data/datasources/country_remote_data_source.dart'
+import 'package:countries/src/features/countries/data/datasources/country_remote_data_source.dart'
     as _i2;
-import 'package:countries/src/data/models/country_model.dart' as _i4;
+import 'package:countries/src/features/countries/data/models/country_model.dart'
+    as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint

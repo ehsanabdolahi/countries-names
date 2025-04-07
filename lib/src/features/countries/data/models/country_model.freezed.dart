@@ -20,12 +20,9 @@ CountryModel _$CountryModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CountryModel {
-  @JsonKey(name: "name")
   String get name => throw _privateConstructorUsedError;
-  @JsonKey(name: "capital")
   String get capital => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
-  @JsonKey(name: "flag")
   String get flag => throw _privateConstructorUsedError;
 
   /// Serializes this CountryModel to a JSON map.
@@ -44,11 +41,7 @@ abstract class $CountryModelCopyWith<$Res> {
           CountryModel value, $Res Function(CountryModel) then) =
       _$CountryModelCopyWithImpl<$Res, CountryModel>;
   @useResult
-  $Res call(
-      {@JsonKey(name: "name") String name,
-      @JsonKey(name: "capital") String capital,
-      String code,
-      @JsonKey(name: "flag") String flag});
+  $Res call({String name, String capital, String code, String flag});
 }
 
 /// @nodoc
@@ -100,11 +93,7 @@ abstract class _$$CountryModelImplCopyWith<$Res>
       __$$CountryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: "name") String name,
-      @JsonKey(name: "capital") String capital,
-      String code,
-      @JsonKey(name: "flag") String flag});
+  $Res call({String name, String capital, String code, String flag});
 }
 
 /// @nodoc
@@ -150,24 +139,21 @@ class __$$CountryModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CountryModelImpl implements _CountryModel {
   const _$CountryModelImpl(
-      {@JsonKey(name: "name") required this.name,
-      @JsonKey(name: "capital") required this.capital,
+      {required this.name,
+      required this.capital,
       required this.code,
-      @JsonKey(name: "flag") required this.flag});
+      required this.flag});
 
   factory _$CountryModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CountryModelImplFromJson(json);
 
   @override
-  @JsonKey(name: "name")
   final String name;
   @override
-  @JsonKey(name: "capital")
   final String capital;
   @override
   final String code;
   @override
-  @JsonKey(name: "flag")
   final String flag;
 
   @override
@@ -208,24 +194,21 @@ class _$CountryModelImpl implements _CountryModel {
 
 abstract class _CountryModel implements CountryModel {
   const factory _CountryModel(
-      {@JsonKey(name: "name") required final String name,
-      @JsonKey(name: "capital") required final String capital,
+      {required final String name,
+      required final String capital,
       required final String code,
-      @JsonKey(name: "flag") required final String flag}) = _$CountryModelImpl;
+      required final String flag}) = _$CountryModelImpl;
 
   factory _CountryModel.fromJson(Map<String, dynamic> json) =
       _$CountryModelImpl.fromJson;
 
   @override
-  @JsonKey(name: "name")
   String get name;
   @override
-  @JsonKey(name: "capital")
   String get capital;
   @override
   String get code;
   @override
-  @JsonKey(name: "flag")
   String get flag;
 
   /// Create a copy of CountryModel
