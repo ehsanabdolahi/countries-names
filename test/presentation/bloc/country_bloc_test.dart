@@ -1,8 +1,8 @@
-import 'package:countries/src/domain/entities/country.dart';
-import 'package:countries/src/domain/usecases/get_countries.dart';
-import 'package:countries/src/presentation/bloc/country/country_bloc.dart';
-import 'package:countries/src/presentation/bloc/country/country_event.dart';
-import 'package:countries/src/presentation/bloc/country/country_state.dart';
+import 'package:countries/src/features/countries/domain/entities/country.dart';
+import 'package:countries/src/features/countries/domain/usecases/get_countries.dart';
+import 'package:countries/src/features/countries/presentation/bloc/country/country_bloc.dart';
+import 'package:countries/src/features/countries/presentation/bloc/country/country_event.dart';
+import 'package:countries/src/features/countries/presentation/bloc/country/country_state.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:bloc_test/bloc_test.dart';

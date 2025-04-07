@@ -1,5 +1,5 @@
-import 'package:countries/src/presentation/bloc/country/country_bloc.dart';
-import 'package:countries/src/presentation/pages/countries_page.dart';
+import 'package:countries/src/features/countries/presentation/bloc/country/country_bloc.dart';
+import 'package:countries/src/features/countries/presentation/pages/countries_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'src/injection_container.dart' as di;

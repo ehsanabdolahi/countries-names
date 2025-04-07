@@ -1,6 +1,6 @@
-import 'package:countries/src/domain/entities/country.dart';
-import 'package:countries/src/domain/repositories/country_repository.dart';
-import 'package:countries/src/domain/usecases/get_countries.dart';
+import 'package:countries/src/features/countries/domain/entities/country.dart';
+import 'package:countries/src/features/countries/domain/repositories/country_repository.dart';
+import 'package:countries/src/features/countries/domain/usecases/get_countries.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

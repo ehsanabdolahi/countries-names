@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:countries/src/constants/categories/api_category.dart';
 import 'package:countries/src/constants/categories/string_category.dart';
 import 'package:dio/dio.dart';
-import '../../core/error/exceptions.dart';
+import '../../../../core/error/exceptions.dart';
 import '../models/country_model.dart';
 
 abstract class CountryRemoteDataSource {

@@ -1,8 +1,8 @@
 import 'package:countries/src/constants/categories/string_category.dart';
 import 'package:dartz/dartz.dart';
-import '../../core/error/exceptions.dart';
-import '../../core/error/failures.dart';
-import '../../core/network/network_info.dart';
+import '../../../../core/error/exceptions.dart';
+import '../../../../core/error/failures.dart';
+import '../../../../core/network/network_info.dart';
 import '../../domain/entities/country.dart';
 import '../../domain/repositories/country_repository.dart';
 import '../datasources/country_remote_data_source.dart';

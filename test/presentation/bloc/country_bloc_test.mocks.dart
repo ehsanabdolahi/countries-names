@@ -6,10 +6,10 @@
 import 'dart:async' as _i5;
 
 import 'package:countries/src/core/error/failures.dart' as _i6;
-import 'package:countries/src/domain/entities/country.dart' as _i7;
-import 'package:countries/src/domain/repositories/country_repository.dart'
+import 'package:countries/src/features/countries/domain/entities/country.dart' as _i7;
+import 'package:countries/src/features/countries/domain/repositories/country_repository.dart'
     as _i2;
-import 'package:countries/src/domain/usecases/get_countries.dart' as _i4;
+import 'package:countries/src/features/countries/domain/usecases/get_countries.dart' as _i4;
 import 'package:dartz/dartz.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
