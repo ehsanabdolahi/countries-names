@@ -9,7 +9,7 @@ class LoginUser {
 
   LoginUser(this.repository);
 
-  Future<Either<Failure, User>> execute(String email, String password) async {
+  Future<Either<Failure, UserEntity>> execute(String email, String password) async {
     return await repository.loginUser(email, password);
   }
 }
