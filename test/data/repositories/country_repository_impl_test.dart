@@ -1,7 +1,7 @@
 import 'package:countries/src/core/network/network_info.dart';
-import 'package:countries/src/data/datasources/country_remote_data_source.dart';
-import 'package:countries/src/data/models/country_model.dart';
-import 'package:countries/src/data/repositories/country_repository_impl.dart';
+import 'package:countries/src/features/countries/data/datasources/country_remote_data_source.dart';
+import 'package:countries/src/features/countries/data/models/country_model.dart';
+import 'package:countries/src/features/countries/data/repositories/country_repository_impl.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

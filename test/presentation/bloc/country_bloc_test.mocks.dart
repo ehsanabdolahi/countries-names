@@ -6,10 +6,12 @@
 import 'dart:async' as _i5;
 
 import 'package:countries/src/core/error/failures.dart' as _i6;
-import 'package:countries/src/domain/entities/country.dart' as _i7;
-import 'package:countries/src/domain/repositories/country_repository.dart'
+import 'package:countries/src/features/countries/domain/entities/country.dart'
+    as _i7;
+import 'package:countries/src/features/countries/domain/repositories/country_repository.dart'
     as _i2;
-import 'package:countries/src/domain/usecases/get_countries.dart' as _i4;
+import 'package:countries/src/features/countries/domain/usecases/get_countries.dart'
+    as _i4;
 import 'package:dartz/dartz.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -63,24 +65,6 @@ class MockGetCountries extends _i1.Mock implements _i4.GetCountries {
           Invocation.getter(#repository),
         ),
       ) as _i2.CountryRepository);
-
-  @override
-  _i5.Future<_i3.Either<_i6.Failure, List<_i7.Country>>> execute() =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #execute,
-          [],
-        ),
-        returnValue:
-            _i5.Future<_i3.Either<_i6.Failure, List<_i7.Country>>>.value(
-                _FakeEither_1<_i6.Failure, List<_i7.Country>>(
-          this,
-          Invocation.method(
-            #execute,
-            [],
-          ),
-        )),
-      ) as _i5.Future<_i3.Either<_i6.Failure, List<_i7.Country>>>);
 
   @override
   _i5.Future<_i3.Either<_i6.Failure, List<_i7.Country>>> call() =>
