@@ -9,12 +9,20 @@ import 'features/countries/domain/repositories/country_repository.dart';
 import 'features/countries/domain/usecases/get_countries.dart';
 import 'features/countries/presentation/bloc/country/country_bloc.dart';
 
+// Auth imports
+import 'features/auth/data/datasources/user_remote_data_source.dart';
+import 'features/auth/data/repositories/auth_repository_impl.dart';
+import 'features/auth/domain/repositories/auth_repository.dart';
+import 'features/auth/domain/usecases/login_user.dart';
+import 'features/auth/presentation/bloc/auth_bloc.dart';
+
 final sl = GetIt.instance;
 
 Future<void> init() async {
+  // Countries Feature
   // BLoC
   sl.registerFactory(
-    () => CountryBloc(getCountries: sl()),
+        () => CountryBloc(getCountries: sl()),
   );
 
   // Use cases
@@ -22,7 +30,7 @@ Future<void> init() async {
 
   // Repositories
   sl.registerLazySingleton<CountryRepository>(
-    () => CountryRepositoryImpl(
+        () => CountryRepositoryImpl(
       remoteDataSource: sl(),
       networkInfo: sl(),
     ),
@@ -30,7 +38,29 @@ Future<void> init() async {
 
   // Data sources
   sl.registerLazySingleton<CountryRemoteDataSource>(
-    () => CountryRemoteDataSourceImpl(dio: sl()),
+        () => CountryRemoteDataSourceImpl(dio: sl()),
+  );
+
+  // Auth Feature
+  // BLoC
+  sl.registerFactory(
+        () => AuthBloc(loginUser: sl()),
+  );
+
+  // Use cases
+  sl.registerLazySingleton(() => LoginUser(sl()));
+
+  // Repositories
+  sl.registerLazySingleton<AuthRepository>(
+        () => AuthRepositoryImpl(
+      remoteDataSource: sl(),
+      networkInfo: sl(),
+    ),
+  );
+
+  // Data sources
+  sl.registerLazySingleton<UserRemoteDataSource>(
+        () => UserRemoteDataSourceImpl(dio: sl()),
   );
 
   // Core
