@@ -5,19 +5,15 @@ class CustomTextField extends StatelessWidget {
   final String labelText;
   final String? hintText;
   final bool obscureText;
-  final TextInputType keyboardType;
-  final IconData? prefixIcon;
-  final Widget? suffix;
+  final Widget? suffixIcon;
   final String? Function(String?)? validator;
-  final BorderRadius? borderRadius;
+  final TextInputType keyboardType;
   final EdgeInsetsGeometry? contentPadding;
-  final bool filled;
-  final Color? fillColor;
-  final InputBorder? border;
-  final InputBorder? focusedBorder;
-  final InputBorder? enabledBorder;
-  final TextStyle? labelStyle;
+  final InputDecoration? decoration;
   final TextStyle? textStyle;
+  final Color? fillColor;
+  final bool filled;
+  final BorderRadius? borderRadius;
 
   const CustomTextField({
     Key? key,
@@ -25,19 +21,15 @@ class CustomTextField extends StatelessWidget {
     required this.labelText,
     this.hintText,
     this.obscureText = false,
-    this.keyboardType = TextInputType.text,
-    this.prefixIcon,
-    this.suffix,
+    this.suffixIcon,
     this.validator,
-    this.borderRadius,
+    this.keyboardType = TextInputType.text,
     this.contentPadding,
-    this.filled = false,
-    this.fillColor,
-    this.border,
-    this.focusedBorder,
-    this.enabledBorder,
-    this.labelStyle,
+    this.decoration,
     this.textStyle,
+    this.fillColor,
+    this.filled = false,
+    this.borderRadius,
   }) : super(key: key);
 
   @override
@@ -46,29 +38,39 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       obscureText: obscureText,
       keyboardType: keyboardType,
-      style: textStyle,
-      decoration: InputDecoration(
-        labelText: labelText,
-        hintText: hintText,
-        filled: filled,
-        fillColor: fillColor,
-        prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
-        suffix: suffix,
-        contentPadding: contentPadding ?? const EdgeInsets.all(16),
-        border: border ??
-            OutlineInputBorder(
-              borderRadius: borderRadius ?? BorderRadius.circular(8),
+      style: textStyle ?? Theme.of(context).textTheme.bodyMedium,
+      validator: validator,
+      decoration: decoration ??
+          InputDecoration(
+            labelText: labelText,
+            hintText: hintText,
+            suffixIcon: suffixIcon,
+            contentPadding: contentPadding ?? const EdgeInsets.all(16.0),
+            filled: filled,
+            fillColor: fillColor,
+            border: OutlineInputBorder(
+              borderRadius: borderRadius ?? BorderRadius.circular(8.0),
             ),
-        focusedBorder: focusedBorder,
-        enabledBorder: enabledBorder,
-        labelStyle: labelStyle,
-      ),
-      validator: validator ?? (value) {
-        if (value == null || value.isEmpty) {
-          return 'Please enter $labelText';
-        }
-        return null;
-      },
+            enabledBorder: OutlineInputBorder(
+              borderRadius: borderRadius ?? BorderRadius.circular(8.0),
+              borderSide: BorderSide(
+                color: Theme.of(context).colorScheme.outline,
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: borderRadius ?? BorderRadius.circular(8.0),
+              borderSide: BorderSide(
+                color: Theme.of(context).colorScheme.primary,
+                width: 2.0,
+              ),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderRadius: borderRadius ?? BorderRadius.circular(8.0),
+              borderSide: BorderSide(
+                color: Theme.of(context).colorScheme.error,
+              ),
+            ),
+          ),
     );
   }
 }
