@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginSelectorPage extends StatelessWidget {
-  const LoginSelectorPage({Key? key}) : super(key: key);
+  const LoginSelectorPage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -16,7 +16,7 @@ class CustomTextField extends StatelessWidget {
   final BorderRadius? borderRadius;
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.labelText,
     this.hintText,
@@ -30,7 +30,7 @@ class CustomTextField extends StatelessWidget {
     this.fillColor,
     this.filled = false,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@
 //
 //     final userModel = userModelFromJson(jsonString);
 
-import 'package:meta/meta.dart';
+// ignore: depend_on_referenced_packages
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'dart:convert';
 
@@ -16,6 +16,7 @@ String userModelToJson(UserModel data) => json.encode(data.toJson());
 @freezed
 class UserModel with _$UserModel {
   const factory UserModel({
+    // ignore: invalid_annotation_target
     @JsonKey(name: "users")
     required List<User> users,
   }) = _UserModel;
@@ -26,8 +27,10 @@ class UserModel with _$UserModel {
 @freezed
 class User with _$User {
   const factory User({
+    // ignore: invalid_annotation_target
     @JsonKey(name: "email")
     required String email,
+    // ignore: invalid_annotation_target
     @JsonKey(name: "password")
     required String password,
   }) = _User;

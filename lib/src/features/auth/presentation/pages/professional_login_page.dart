@@ -142,7 +142,9 @@ class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
                           prefixIcon: const Icon(Icons.lock),
                           suffixIcon: IconButton(
                             icon: Icon(
-                              _obscurePassword ? Icons.visibility : Icons.visibility_off,
+                              _obscurePassword
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
                             ),
                             onPressed: () {
                               setState(() {
@@ -201,11 +203,14 @@ class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
                               });
                             },
                           ),
-                          const Text('Remember me'),
-                          const Spacer(),
-                          TextButton(
-                            onPressed: () {},
-                            child: const Text('Forgot Password?'),
+                          const Flexible(
+                            child: Text('Remember me'),
+                          ),
+                          Flexible(
+                            child: TextButton(
+                              onPressed: () {},
+                              child: const Text('Forgot Password?'),
+                            ),
                           ),
                         ],
                       ),
@@ -219,17 +224,18 @@ class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
                               onPressed: state is AuthLoading
                                   ? null
                                   : () {
-                                if (_formKey.currentState!.validate() &&
-                                    _emailError == null &&
-                                    _passwordError == null) {
-                                  context.read<AuthBloc>().add(
-                                    LoginButtonPressed(
-                                      email: _emailController.text,
-                                      password: _passwordController.text,
-                                    ),
-                                  );
-                                }
-                              },
+                                      if (_formKey.currentState!.validate() &&
+                                          _emailError == null &&
+                                          _passwordError == null) {
+                                        context.read<AuthBloc>().add(
+                                              LoginButtonPressed(
+                                                email: _emailController.text,
+                                                password:
+                                                    _passwordController.text,
+                                              ),
+                                            );
+                                      }
+                                    },
                               style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(12),
@@ -238,12 +244,12 @@ class _ProfessionalLoginPageState extends State<ProfessionalLoginPage> {
                               child: state is AuthLoading
                                   ? const CircularProgressIndicator()
                                   : const Text(
-                                'LOGIN',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
+                                      'LOGIN',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
                             ),
                           );
                         },
